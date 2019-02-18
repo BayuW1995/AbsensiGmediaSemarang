@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layouthistory"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp"
+    android:weightSum="5">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.8"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tanggalmulaihistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Jum'at, 23-06-2017"
+            android:textColor="#000000"
+            android:textSize="@dimen/textisiviewhistory" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="s/d"
+            android:textColor="#000000"
+            android:textSize="@dimen/textisiviewhistory" />
+
+        <TextView
+            android:id="@+id/tanggalselesaihistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Sabtu, 24-06-2017"
+            android:textColor="#000000"
+            android:textSize="@dimen/textisiviewhistory" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/keteranganhistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layouttanggalviewhistory"
+            android:text="Acara keluarga"
+            android:textColor="#000000"
+            android:textSize="@dimen/textisiviewhistory" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.2"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/nohistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="1"
+            android:textColor="#000000"
+            android:textSize="@dimen/textisiviewhistory" />
+    </LinearLayout>
+</LinearLayout>

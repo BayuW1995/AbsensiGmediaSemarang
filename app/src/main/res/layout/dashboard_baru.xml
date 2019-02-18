@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/baground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/background_dashboard"
+        android:orientation="vertical"
+        android:weightSum="6">
+
+        <LinearLayout
+            android:id="@+id/layoutslidingpanel"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5">
+
+            <gmedia.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:sothree="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/sliding"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                sothree:umanoPanelHeight="130dp"
+                sothree:umanoShadowHeight="0dp">
+
+                <LinearLayout
+                    android:id="@+id/layoutdaftar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_weight="9.5"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:weightSum="2">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:weightSum="1">
+
+                                <RelativeLayout
+                                    android:id="@+id/menuSisaCuti"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.8"
+                                    android:background="@drawable/mbunderke_kotak_dashboard">
+
+                                    <RelativeLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true">
+
+                                        <TextView
+                                            android:id="@+id/sisaCutiDashboard"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerHorizontal="true"
+                                            android:textColor="#ffffff"
+                                            android:textSize="13dp" />
+
+                                        <TextView
+                                            android:id="@+id/contentSisaCutiDashboard"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/sisaCutiDashboard"
+                                            android:layout_centerHorizontal="true"
+                                            android:textColor="#ffffff"
+                                            android:textSize="30dp"
+                                            android:textStyle="bold" />
+
+                                    </RelativeLayout>
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_weight="1"
+                                android:gravity="right"
+                                android:weightSum="1">
+
+                                <RelativeLayout
+                                    android:id="@+id/menuUangLembur"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.8"
+                                    android:background="@drawable/mbunderke_kotak_dashboard">
+
+                                    <RelativeLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true">
+
+                                        <TextView
+                                            android:id="@+id/uangLemburDashboard"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerHorizontal="true"
+                                            android:textColor="#ffffff"
+                                            android:textSize="13dp" />
+
+                                        <TextView
+                                            android:id="@+id/contentUangLemburDashboard"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/uangLemburDashboard"
+                                            android:layout_centerHorizontal="true"
+                                            android:textColor="#ffffff"
+                                            android:textSize="30dp"
+                                            android:textStyle="bold" />
+                                    </RelativeLayout>
+                                </RelativeLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:weightSum="2">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginLeft="4dp"
+                                android:layout_weight="1"
+                                android:gravity="left"
+                                android:weightSum="1">
+
+                                <RelativeLayout
+                                    android:id="@+id/menuTotalTerlambat"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.8"
+                                    android:background="@drawable/mbunderke_kotak_dashboard">
+
+                                    <RelativeLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true">
+
+                                        <TextView
+                                            android:id="@+id/totalTerlambatDashboard"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerHorizontal="true"
+                                            android:textColor="#ffffff"
+                                            android:textSize="13dp" />
+
+                                        <TextView
+                                            android:id="@+id/contentTotalTerlambatDashboard"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/totalTerlambatDashboard"
+                                            android:layout_centerHorizontal="true"
+                                            android:textColor="#ffffff"
+                                            android:textSize="30dp"
+                                            android:textStyle="bold" />
+                                    </RelativeLayout>
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginTop="4dp"
+                                android:layout_weight="1"
+                                android:gravity="left"
+                                android:weightSum="1">
+
+                                <RelativeLayout
+                                    android:id="@+id/menuUangMakan"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.8"
+                                    android:background="@drawable/mbunderke_kotak_dashboard">
+
+                                    <RelativeLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true">
+
+                                        <TextView
+                                            android:id="@+id/uangMakanDashboard"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerHorizontal="true"
+                                            android:textColor="#ffffff"
+                                            android:textSize="13dp" />
+
+                                        <TextView
+                                            android:id="@+id/contentUangMakanDashboard"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/uangMakanDashboard"
+                                            android:layout_centerHorizontal="true"
+                                            android:textColor="#ffffff"
+                                            android:textSize="30dp"
+                                            android:textStyle="bold" />
+                                    </RelativeLayout>
+
+                                </RelativeLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#aa182b53">
+
+                    <RelativeLayout
+                        android:id="@+id/slidingLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
+                            android:id="@+id/layoutnews"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/backgroundnewsslidinglayout">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginBottom="2.5dp"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp"
+                                android:layout_marginTop="2.5dp">
+
+                                <TextView
+                                    android:id="@+id/textnewsdashboard"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="NEWS"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/panah"
+                                    android:layout_width="10dp"
+                                    android:layout_height="10dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_toRightOf="@+id/textnewsdashboard"
+                                    android:src="@drawable/panah_keatas_putih" />
+                            </RelativeLayout>
+                        </RelativeLayout>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rv_DashboardBaru"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/layoutnews"
+                            android:layout_centerHorizontal="true"
+                            android:animationCache="false"
+                            android:nestedScrollingEnabled="true"
+                            android:scrollingCache="false"
+                            android:smoothScrollbar="true"
+                            sothree:fastScrollEnabled="false">
+
+                        </android.support.v7.widget.RecyclerView>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </gmedia.sothree.slidinguppanel.SlidingUpPanelLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/marginBottomTombolCheckIn"
+            android:layout_marginLeft="@dimen/marginLeftRightTombol"
+            android:layout_marginRight="@dimen/marginLeftRightTombol"
+            android:layout_marginTop="@dimen/marginTopTombolCheckIn"
+            android:layout_weight="0.5">
+
+            <Button
+                android:id="@+id/tombolCheckinDashboard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/mbunderke_tombolcheckin_dashboard"
+                android:text="CHECK IN"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/textTombolDashboard"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/marginBottomTombolCheckOut"
+            android:layout_marginLeft="@dimen/marginLeftRightTombol"
+            android:layout_marginRight="@dimen/marginLeftRightTombol"
+            android:layout_marginTop="@dimen/marginTopTombolCheckOut"
+            android:layout_weight="0.5">
+
+            <Button
+                android:id="@+id/tombolCheckoutDashboard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/mbunderke_tombolcheckout_dashboard"
+                android:text="CHECK OUT"
+                android:textColor="#f7a42f"
+                android:textSize="@dimen/textTombolDashboard"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="12">
+
+   <!-- <RelativeLayout
+        android:id="@+id/layoutNIKScanLog"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="#FFFFFF"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/NIKScanLog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="03.022.2012"
+            android:textColor="#000000"
+            android:textSize="@dimen/teksListRekapAbsensi" />
+    </RelativeLayout>-->
+
+    <RelativeLayout
+        android:id="@+id/layoutNamaScanLog"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:background="#FFFFFF"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/tanggalScanLog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="13/02/2012"
+            android:textColor="#000000"
+            android:textSize="@dimen/teksListRekapAbsensi" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/layoutTanggalScanLog"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:background="#FFFFFF"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/jamScanLog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="17.30"
+            android:textColor="#000000"
+            android:textSize="@dimen/teksListRekapAbsensi"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutJamScanLog"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:background="#FFFFFF"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/typeScanLog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Check Out"
+            android:textColor="#000000"
+            android:textSize="@dimen/teksListRekapAbsensi" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/baground_login"
+    tools:context="gmedia.net.id.absenigmedia.Login">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/layoutLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.7">
+
+                    <ImageView
+                        android:id="@+id/imageLogin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/logo_baru" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <EditText
+                    android:id="@+id/nik"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:background="@drawable/mbunderke"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center_horizontal"
+                    android:hint="Masukan Username"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:textColorHint="#35ffffff"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/textLogin">
+                    <requestFocus></requestFocus>
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:background="@drawable/mbunderke"
+                    android:gravity="center_horizontal"
+                    android:hint="Masukan Password"
+                    android:inputType="textPassword"
+                    android:padding="10dp"
+                    android:textColorHint="#35ffffff"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/textLogin" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="1">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:background="@drawable/mbunderke"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <Spinner
+                        android:id="@+id/menuRegional"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.5"
+                        android:padding="9dp"
+                        android:theme="@style/ThemeOverlay.AppCompat.Light">
+
+                    </Spinner>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="55dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <Button
+                    android:id="@+id/login"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/forgot"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="0.6"
+                    android:background="@drawable/mbunderkelogin"
+                    android:padding="5dp"
+                    android:text="Login"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/button" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout><!--<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/nik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/logo"
+                android:background="@drawable/mbunderke"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center_horizontal"
+                android:hint="Masukan Username"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColorHint="#35ffffff"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/textLogin">
+
+                <requestFocus></requestFocus>
+            </EditText>
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nik"
+                android:background="@drawable/mbunderke"
+                android:gravity="center_horizontal"
+                android:hint="Masukan Password"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textColorHint="#35ffffff"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/textLogin" />
+
+            <CheckBox
+                android:id="@+id/rememberme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/login"
+                android:layout_alignLeft="@+id/password"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="20dp"
+                android:buttonTint="#4b94d2"
+                android:contextClickable="true"
+                android:shadowColor="#000000"
+                android:text="remember me"
+                android:textColor="#000000"
+                android:textSize="@dimen/rememberme" />
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/forgot"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/mbunderkelogin"
+                android:padding="5dp"
+                android:text="Login"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/button" />
+
+            <TextView
+                android:id="@+id/forgot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/marginLogin"
+                android:text="Forgot Your Password?"
+                android:textColor="#000000"
+                android:textSize="@dimen/forgot" />
+        </LinearLayout>
+    </ScrollView>-->
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/baground_login"
+        tools:context="gmedia.net.id.absenigmedia.Login">
+
+        <LinearLayout
+            android:id="@+id/ll_header"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.7">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/logo_baru" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="70dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/forgot"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_weight="0.6"
+                android:background="@drawable/mbunderkelogin"
+                android:padding="5dp"
+                android:text="Login"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/button" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/ll_footer"
+            android:layout_below="@id/ll_header"
+            android:layout_marginTop="16dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/layoutLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <EditText
+                        android:id="@+id/nik"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:background="@drawable/mbunderke"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:gravity="center_horizontal"
+                        android:hint="Masukan Username"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:textColorHint="#35ffffff"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/textLogin">
+
+                        <requestFocus></requestFocus>
+                    </EditText>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <EditText
+                        android:id="@+id/password"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:background="@drawable/mbunderke"
+                        android:gravity="center_horizontal"
+                        android:hint="Masukan Password"
+                        android:inputType="textPassword"
+                        android:padding="10dp"
+                        android:textColorHint="#35ffffff"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/textLogin" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>-->
+
+    <!--<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/nik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/logo"
+                android:background="@drawable/mbunderke"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center_horizontal"
+                android:hint="Masukan Username"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColorHint="#35ffffff"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/textLogin">
+
+                <requestFocus></requestFocus>
+            </EditText>
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nik"
+                android:background="@drawable/mbunderke"
+                android:gravity="center_horizontal"
+                android:hint="Masukan Password"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textColorHint="#35ffffff"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/textLogin" />
+
+            <CheckBox
+                android:id="@+id/rememberme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/login"
+                android:layout_alignLeft="@+id/password"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="20dp"
+                android:buttonTint="#4b94d2"
+                android:contextClickable="true"
+                android:shadowColor="#000000"
+                android:text="remember me"
+                android:textColor="#000000"
+                android:textSize="@dimen/rememberme" />
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/forgot"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/mbunderkelogin"
+                android:padding="5dp"
+                android:text="Login"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/button" />
+
+            <TextView
+                android:id="@+id/forgot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/marginLogin"
+                android:text="Forgot Your Password?"
+                android:textColor="#000000"
+                android:textSize="@dimen/forgot" />
+        </LinearLayout>
+    </ScrollView>-->
+
+
+

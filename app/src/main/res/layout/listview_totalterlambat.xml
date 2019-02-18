@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="12">
+
+    <RelativeLayout
+        android:id="@+id/layouttanggaltotalterlambat"
+        android:layout_weight="4"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/tanggaltotalterlambat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:text="Sen, 21/01/2017"
+            android:textSize="@dimen/teksListRekapAbsensi"
+            android:textColor="#000000" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutjammasuktotalterlambat"
+        android:layout_weight="2.5"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/jammasuktotalterlambat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="08.10"
+            android:textSize="@dimen/teksListRekapAbsensi"
+            android:textColor="#000000" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutscanmasuktotalterlambat"
+        android:layout_weight="2.5"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/scanmasuktotalterlambat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="17.40"
+            android:textSize="@dimen/teksListRekapAbsensi"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutjamtelattotalterlambat"
+        android:layout_weight="3"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/layoutjamkeluarabsen"
+        android:background="#FFFFFF"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/telattotalterlambat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="20"
+            android:textSize="@dimen/teksListRekapAbsensi"
+            android:textColor="#000000" />
+    </RelativeLayout>
+</LinearLayout>

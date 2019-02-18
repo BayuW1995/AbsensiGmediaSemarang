@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mbunderke_progress_cuti">
+        <ProgressBar
+            android:id="@+id/prosesCheckIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/textprosesCheckIn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/prosesCheckIn"
+            android:layout_marginLeft="10dp"
+            android:text="Selamat Anda Berhasil ABSEN"
+            android:textColor="#000000"
+            android:textSize="20dp"/>
+        <Button
+            android:id="@+id/ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/textprosesCheckIn"
+            android:text="OK!!!"/>
+    </RelativeLayout>
+</RelativeLayout>

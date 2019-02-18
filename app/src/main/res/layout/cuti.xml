@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/baground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:background="#ecf7fd">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:id="@+id/layoutcuti"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/layouthistorycuti"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/history"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:clickable="true"
+                        android:text="Lihat History"
+                        android:textColor="#145692"
+                        android:textSize="@dimen/texthistory" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dp"
+                        android:layout_toLeftOf="@+id/sisacuti"
+                        android:text="Sisa Cuti :"
+                        android:textColor="#145692"
+                        android:textSize="@dimen/texthistory" />
+
+                    <TextView
+                        android:id="@+id/sisacuti"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="30dp"
+                        android:textColor="#145692"
+                        android:textSize="@dimen/texthistory" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layouttglmulai"
+                    android:layout_width="@dimen/widthlayoutperiode"
+                    android:layout_height="@dimen/heightlayoutperiode"
+                    android:layout_below="@+id/layouthistorycuti"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/mbunderke_tombol_cuti">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp">
+
+                        <TextView
+                            android:id="@+id/texttglmulai"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:alpha="0.5"
+                            android:text="Tanggal Mulai"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/textperiode" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/tomboltglmulai"
+                        android:layout_width="@dimen/widthheighttombolperiode"
+                        android:layout_height="@dimen/widthheighttombolperiode"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="30dp"
+                        android:src="@drawable/kalender" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layouttglselesai"
+                    android:layout_width="@dimen/widthlayoutperiode"
+                    android:layout_height="@dimen/heightlayoutperiode"
+                    android:layout_below="@+id/layouttglmulai"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/mbunderke_tombol_cuti">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp">
+
+                        <TextView
+                            android:id="@+id/texttglselesai"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:alpha="0.5"
+                            android:text="Tanggal Selesai"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/textperiode" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/tomboltglselesai"
+                        android:layout_width="@dimen/widthheighttombolperiode"
+                        android:layout_height="@dimen/widthheighttombolperiode"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="30dp"
+                        android:src="@drawable/kalender" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutMenuDropdownCuti"
+                    android:layout_width="@dimen/widthlayoutperiode"
+                    android:layout_height="@dimen/heightlayoutperiode"
+                    android:layout_below="@+id/layouttglselesai"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:visibility="invisible"
+                    android:background="@drawable/mbunderkedropdown">
+
+                    <Spinner
+                        android:id="@+id/menuDropdownCuti"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="70dp"
+                        android:alpha="0.5"
+                        android:textAlignment="center"
+                        android:theme="@style/ThemeOverlay.AppCompat.Light"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/keterangan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layouttglselesai"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Keterangan :"
+                    android:textColor="#145692"
+                    android:textSize="@dimen/texthistory" />
+
+                <EditText
+                    android:id="@+id/edit_text_keterangan"
+                    android:layout_width="@dimen/widthedittext"
+                    android:layout_height="@dimen/heightedittext"
+                    android:layout_below="@+id/keterangan"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/mbunderke_edittext"
+                    android:gravity="start"
+                    android:paddingLeft="8dp"
+                    android:textAlignment="textStart"
+                    android:textColor="#000000"
+                    android:textCursorDrawable="@null" />
+
+                <RelativeLayout
+                    android:id="@+id/layoutkirim"
+                    android:layout_width="@dimen/widthlayouttombolproses"
+                    android:layout_height="@dimen/heightlayouttombolproses"
+                    android:layout_below="@+id/edit_text_keterangan"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/mbunderketombolproses"
+                    android:clickable="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Kirim"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/textproses"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/baground">
+
+    <RelativeLayout
+        android:id="@+id/judulHistoryIjin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/backHistoryIjin"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/back" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/backHistoryIjin"
+            android:text="History Ijin"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/judulHistoryIjin"
+        android:background="#ecf7fd"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/layoutmenudropdown"
+                android:layout_width="@dimen/widthlayoutperiode"
+                android:layout_height="@dimen/heightlayoutperiode"
+                android:layout_gravity="center"
+                android:background="@drawable/mbunderkedropdown">
+
+                <Spinner
+                    android:id="@+id/menudropdownHistoryIjin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="70dp"
+                    android:alpha="0.5"
+                    android:textAlignment="center"
+                    android:theme="@style/ThemeOverlay.AppCompat.Light"/>/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layoutTglMulaiHistoryIjin"
+                android:layout_width="@dimen/widthlayoutperiode"
+                android:layout_height="@dimen/heightlayoutperiode"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/mbunderke_tombol_cuti">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="30dp">
+
+                    <TextView
+                        android:id="@+id/textTglMulaiHistoryIjin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:alpha="0.5"
+                        android:text="Tanggal Mulai"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/textperiode" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/tombolTglMulaiHistoryIjin"
+                    android:layout_width="@dimen/widthheighttombolperiode"
+                    android:layout_height="@dimen/widthheighttombolperiode"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/kalender" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layoutTglSelesaiHistoryIjin"
+                android:layout_width="@dimen/widthlayoutperiode"
+                android:layout_height="@dimen/heightlayoutperiode"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/mbunderke_tombol_cuti">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="30dp">
+
+                    <TextView
+                        android:id="@+id/textTglSelesaiHistoryIjin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:alpha="0.5"
+                        android:text="Tanggal Selesai"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/textperiode" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/tombolTglSelesaiHistoryIjin"
+                    android:layout_width="@dimen/widthheighttombolperiode"
+                    android:layout_height="@dimen/widthheighttombolperiode"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/kalender" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layoutkirimhistoryijin"
+                android:layout_width="@dimen/widthlayouttombolproses"
+                android:layout_height="@dimen/heightlayouttombolproses"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/mbunderketombolproses"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Proses"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/textproses"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp">
+
+                <LinearLayout
+                    android:id="@+id/layoutListPulangAwal"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:visibility="visible"
+                    android:weightSum="10">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="10">
+
+                        <LinearLayout
+                            android:id="@+id/judulHistoryIjinPulangAwal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#FFFFFF"
+                            android:orientation="horizontal"
+                            android:weightSum="12">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:background="#2b588b"
+                                android:paddingBottom="5dp"
+                                android:paddingTop="5dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/textjam"
+                                    android:layout_centerInParent="true"
+                                    android:text="Tanggal"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="1dp"
+                                android:layout_weight="3"
+                                android:background="#2b588b">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="Jam"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="1dp"
+                                android:layout_weight="3"
+                                android:background="#2b588b">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="Alasan"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="1dp"
+                                android:layout_weight="3"
+                                android:background="#2b588b">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="Status"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/daftarListhistoryijin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/judulHistoryIjinPulangAwal">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/titledatarekapabsensi"
+                                android:background="#2b588b"
+                                android:paddingBottom="2dp"
+                                android:paddingLeft="2dp"
+                                android:paddingRight="2dp">
+
+                                <ListView
+                                    android:id="@+id/listHistoryIjinPulangAwal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="#2b588b"
+                                    android:nestedScrollingEnabled="true"
+                                    android:scrollbars="none" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutListKeluarKantor"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:visibility="gone"
+                    android:weightSum="10">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="10">
+
+                        <LinearLayout
+                            android:id="@+id/judulHistoryIjinKeluarKantor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#FFFFFF"
+                            android:orientation="horizontal"
+                            android:weightSum="12">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2.5"
+                                android:background="#2b588b"
+                                android:paddingBottom="5dp"
+                                android:paddingTop="5dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="Tanggal"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="1dp"
+                                android:layout_weight="3.5"
+                                android:background="#2b588b">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/textjam2"
+                                    android:layout_centerInParent="true"
+                                    android:text="Waktu"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="1dp"
+                                android:layout_weight="3"
+                                android:background="#2b588b">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="Alasan"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="1dp"
+                                android:layout_weight="3"
+                                android:background="#2b588b">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="Status"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/judulHistoryIjinKeluarKantor">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/titledatarekapabsensi"
+                                android:background="#2b588b"
+                                android:paddingBottom="2dp"
+                                android:paddingLeft="2dp"
+                                android:paddingRight="2dp">
+
+                                <ListView
+                                    android:id="@+id/listHistoryIjinKeluarKantor"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="#2b588b"
+                                    android:nestedScrollingEnabled="true"
+                                    android:scrollbars="none" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout><!--<LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="14"
+            android:orientation="vertical"
+            android:weightSum="20">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="19"
+                android:orientation="vertical"
+                android:weightSum="20">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="History Ijin Pulang Awal"
+                    android:textColor="#2b588b"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="10"
+                    android:weightSum="10">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="10">
+
+                        <LinearLayout
+                            android:id="@+id/judulHistoryIjinPulangAwal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#FFFFFF"
+                            android:orientation="horizontal"
+                            android:weightSum="12">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:background="#2b588b">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="NO"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="1dp"
+                                android:layout_weight="4"
+                                android:background="#2b588b">
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true">
+
+                                    <TextView
+                                        android:id="@+id/textjam"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:text="Hari /"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="@dimen/text" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/textjam"
+                                        android:layout_centerHorizontal="true"
+                                        android:text="Tanggal"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="@dimen/text" />
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="1dp"
+                                android:layout_weight="3"
+                                android:background="#2b588b">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="Alasan"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="1dp"
+                                android:layout_weight="3"
+                                android:background="#2b588b">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="Status"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/daftarListhistoryijin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/judulHistoryIjinPulangAwal">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/titledatarekapabsensi"
+                                android:background="#2b588b"
+                                android:paddingBottom="2dp"
+                                android:paddingLeft="2dp"
+                                android:paddingRight="2dp">
+
+                                <ListView
+                                    android:id="@+id/listHistoryIjinPulangAwal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="#2b588b" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="History Ijin Keluar Kantor"
+                    android:textColor="#2b588b"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="10"
+                    android:weightSum="10">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="10">
+
+                        <LinearLayout
+                            android:id="@+id/judulHistoryIjinKeluarKantor"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#FFFFFF"
+                            android:orientation="horizontal"
+                            android:weightSum="12">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:background="#2b588b">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="NO"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="1dp"
+                                android:layout_weight="4"
+                                android:background="#2b588b">
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true">
+
+                                    <TextView
+                                        android:id="@+id/textjam2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:text="Hari /"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="@dimen/text" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/textjam2"
+                                        android:layout_centerHorizontal="true"
+                                        android:text="Tanggal"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="@dimen/text" />
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="1dp"
+                                android:layout_weight="3"
+                                android:background="#2b588b">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="Alasan"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="1dp"
+                                android:layout_weight="3"
+                                android:background="#2b588b">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="Status"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="@dimen/text" />
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/judulHistoryIjinKeluarKantor">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/titledatarekapabsensi"
+                                android:background="#2b588b"
+                                android:paddingBottom="2dp"
+                                android:paddingLeft="2dp"
+                                android:paddingRight="2dp">
+
+                                <ListView
+                                    android:id="@+id/listHistoryIjinKeluarKantor"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="#2b588b" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5" />-->

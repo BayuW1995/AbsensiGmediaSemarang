@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/baground"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/backEditCuti"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/back" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/juduldatacuti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/backEditCuti"
+            android:text="Edit Cuti"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutEditCuti"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ecf7fd">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/layouttglmulaiEditCuti"
+                    android:layout_width="@dimen/widthlayoutperiode"
+                    android:layout_height="@dimen/heightlayoutperiode"
+                    android:layout_below="@+id/layouthistorycuti"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/mbunderke_tombol_cuti">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp">
+
+                        <TextView
+                            android:id="@+id/texttglmulaiEditCuti"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Tanggal Mulai"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/textperiode" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/tomboltglmulai"
+                        android:layout_width="@dimen/widthheighttombolperiode"
+                        android:layout_height="@dimen/widthheighttombolperiode"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="30dp"
+                        android:src="@drawable/kalender" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layouttglselesaiEditCuti"
+                    android:layout_width="@dimen/widthlayoutperiode"
+                    android:layout_height="@dimen/heightlayoutperiode"
+                    android:layout_below="@+id/layouttglmulaiEditCuti"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/mbunderke_tombol_cuti">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp">
+
+                        <TextView
+                            android:id="@+id/texttglselesaiEditCuti"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Tanggal Selesai"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/textperiode" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/tomboltglselesai"
+                        android:layout_width="@dimen/widthheighttombolperiode"
+                        android:layout_height="@dimen/widthheighttombolperiode"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="30dp"
+                        android:src="@drawable/kalender" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutMenuDropdownEditCuti"
+                    android:layout_width="@dimen/widthlayoutperiode"
+                    android:layout_height="@dimen/heightlayoutperiode"
+                    android:layout_below="@+id/layouttglselesaiEditCuti"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/mbunderkedropdown">
+
+                    <Spinner
+                        android:id="@+id/menuDropdownEditCuti"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="70dp"
+                        android:alpha="0.5"
+                        android:textAlignment="center"
+                        android:theme="@style/ThemeOverlay.AppCompat.Light" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/keterangan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layoutMenuDropdownEditCuti"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Keterangan :"
+                    android:textColor="#145692"
+                    android:textSize="@dimen/texthistory" />
+
+                <EditText
+                    android:id="@+id/edit_text_keterangan_edit_cuti"
+                    android:layout_width="@dimen/widthedittext"
+                    android:layout_height="@dimen/heightedittext"
+                    android:layout_below="@+id/keterangan"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="3dp"
+                    android:background="@drawable/mbunderke_edittext"
+                    android:gravity="start"
+                    android:paddingLeft="8dp"
+                    android:textAlignment="textStart"
+                    android:textColor="#000000"
+                    android:textCursorDrawable="@null" />
+
+                <RelativeLayout
+                    android:id="@+id/layoutKirimEditCuti"
+                    android:layout_width="@dimen/widthlayouttombolproses"
+                    android:layout_height="@dimen/heightlayouttombolproses"
+                    android:layout_below="@+id/edit_text_keterangan_edit_cuti"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/mbunderketombolproses"
+                    android:clickable="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Simpan"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/textproses"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+</LinearLayout>

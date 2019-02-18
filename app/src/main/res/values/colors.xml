@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#009CD9</color>
+    <color name="statusbar">#012655</color>
+    <color name="statusbarcheckout">#5e2d01</color>
+    <color name="warnaEditText">#4b94d2</color>
+    <color name="warnatombolin">#669ed5</color>
+    <color name="warnatombolinkliked">#516c86</color>
+    <color name="login">#f2eeee</color>
+    <color name="textDrawer">#669cd3</color>
+    <color name="textbiasa">#000000</color>
+    <color name="Libur">#FF0000</color>
+</resources>

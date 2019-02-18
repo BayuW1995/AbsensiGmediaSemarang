@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#325095">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:background="#325095">
+
+        <RelativeLayout
+            android:id="@+id/akunDashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <RelativeLayout
+                    android:id="@+id/namaNik"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true">
+
+                    <TextView
+                        android:id="@+id/namaAkun"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="GUSAT YUSARYANTO"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/textnamadashboard"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/NIKakun"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/namaAkun"
+                        android:text="NIK 03.122.2017"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/textNikDashboard" />
+                </RelativeLayout>
+
+
+                <ImageView
+                    android:id="@+id/iconAkun"
+                    android:layout_width="@dimen/imageDashboard"
+                    android:layout_height="@dimen/imageDashboard"
+                    android:layout_marginLeft="50dp"
+                    android:layout_toRightOf="@+id/namaNik"
+                    android:background="@drawable/bunderkeakundashboard" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/marginLayoutPutihDashboard"
+            android:background="#FFFFFF">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/recyclerviewdashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/akunDashboard">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_Dashboard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marginRecyclerViewDashboard"
+                android:animationCache="false"
+                android:scrollingCache="false"
+                android:smoothScrollbar="true" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textnews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recyclerviewdashboard"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:text="News"
+            android:textColor="#000000"
+            android:textSize="@dimen/textNewsDashboard" />
+
+        <RelativeLayout
+            android:id="@+id/garisbawahnews"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/garisNewsDashboard"
+            android:layout_below="@+id/textnews"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:alpha="0.2"
+            android:background="#000000">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/listviewdashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/garisbawahnews">
+
+            <ListView
+                android:id="@+id/lv_dashboard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fastScrollEnabled="false"
+                android:nestedScrollingEnabled="false"
+
+                android:animationCache="false"
+                android:scrollingCache="false"
+                android:smoothScrollbar="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/absen"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/effectklikdashboard">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Absen"
+                android:textColor="#FFFFFF"
+                android:textSize="25dp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/baground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:background="#ecf7fd">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/layoutAwalJadwal"
+                    android:layout_width="@dimen/widthlayoutperiode"
+                    android:layout_height="@dimen/heightlayoutperiode"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/mbunderke_tombol_cuti">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp">
+
+                        <TextView
+                            android:id="@+id/tglAwalJadwal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:alpha="0.5"
+                            android:text="Tanggal Mulai"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/textperiode" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/tombolAwalJadwal"
+                        android:layout_width="@dimen/widthheighttombolperiode"
+                        android:layout_height="@dimen/widthheighttombolperiode"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="30dp"
+                        android:src="@drawable/kalender" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutAkhirJadwal"
+                    android:layout_width="@dimen/widthlayoutperiode"
+                    android:layout_height="@dimen/heightlayoutperiode"
+                    android:layout_below="@+id/layoutAwalJadwal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/mbunderke_tombol_cuti">
+
+                    <!--<RelativeLayout
+                        android:id="@+id/sampai"
+                        android:layout_width="@dimen/widthperiode"
+                        android:layout_height="match_parent">
+                    </RelativeLayout>-->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp">
+
+                        <TextView
+                            android:id="@+id/tglAkhirJadwal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:alpha="0.5"
+                            android:text="Tanggal Selesai"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/textperiode" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/tombolAkhirJadwal"
+                        android:layout_width="@dimen/widthheighttombolperiode"
+                        android:layout_height="@dimen/widthheighttombolperiode"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="30dp"
+                        android:src="@drawable/kalender" />
+
+
+                    <!--<RelativeLayout
+                        android:id="@+id/layouttombolsampai"
+                        android:layout_width="@dimen/widthlayouttombolperiode"
+                        android:layout_height="match_parent"
+                        android:layout_toRightOf="@+id/sampai"
+                        android:background="@drawable/mbunderke_tombol_cuti_biru">
+
+                        &lt;!&ndash;<ImageView
+                            android:id="@+id/tombolsampai"
+                            android:layout_width="@dimen/widthheighttombolperiode"
+                            android:layout_height="@dimen/widthheighttombolperiode"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/kalender" />&ndash;&gt;
+                    </RelativeLayout>-->
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutProsesJadwal"
+                    android:layout_width="@dimen/widthlayouttombolproses"
+                    android:layout_height="@dimen/heightlayouttombolproses"
+                    android:layout_below="@+id/layoutAkhirJadwal"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/mbunderketombolproses"
+                    android:clickable="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Proses"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/textproses" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/dataJadwal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="300dp"
+                    android:layout_below="@+id/layoutProsesJadwal"
+                    android:visibility="gone">
+
+                    <include layout="@layout/data_expand_detail_jadwal" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout><!--<LinearLayout
+android:id="@+id/layoutdatahistoryijin"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="horizontal"
+android:weightSum="10">
+
+<RelativeLayout
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="10">
+
+    <LinearLayout
+        android:id="@+id/judulListRekapAbsensi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        android:weightSum="12">
+
+        <RelativeLayout
+            android:id="@+id/layoutharitanggaljadwal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/layoutharitanggal"
+            android:layout_weight="4"
+            android:background="#2b588b">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/textharijadwal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Hari /"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/text" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textharijadwal"
+                    android:layout_centerHorizontal="true"
+                    android:text="Tanggal"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/text" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layoutshiftjadwal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="2"
+            android:background="#2b588b">
+
+            <TextView
+                android:id="@+id/textshift"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Shift"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/text" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/layoutjammasukjadwal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="3"
+            android:background="#2b588b">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/textjammasukjadwal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Jam"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/text" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textjammasukjadwal"
+                    android:layout_centerHorizontal="true"
+                    android:text="Masuk"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/text" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layoutjamkeluarjadwal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
+            android:layout_weight="3"
+            android:background="#2b588b">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/textjamkeluarjadwal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Jam"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/text" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textjamkeluarjadwal"
+                    android:layout_centerHorizontal="true"
+                    android:text="Keluar"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/text" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/daftarListhistoryijin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/judulListRekapAbsensi"
+        android:layout_marginBottom="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titledatarekapabsensi"
+            android:background="#2b588b"
+            android:paddingBottom="2dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp">
+
+            <ListView
+                android:id="@+id/listJadwal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#2b588b" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>
+</LinearLayout>-->

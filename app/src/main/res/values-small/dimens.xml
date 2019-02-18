@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="marginLogin">40dp</dimen>
+    <dimen name="marginTableUangMakan">10dp</dimen>
+    <dimen name="marginjumlah">20dp</dimen>
+    <dimen name="textSizeWaktu">80sp</dimen>
+</resources>

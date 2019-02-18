@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="12">
+
+    <RelativeLayout
+        android:id="@+id/layouttanggaljadwal"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:background="#FFFFFF"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/tanggaljadwal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Jum, 21/01/2017"
+            android:textColor="#000000"
+            android:textSize="@dimen/teksListRekapAbsensi" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutshiftjadwal"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:background="#FFFFFF"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/shiftjadwal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="R"
+            android:textColor="#000000"
+            android:textSize="@dimen/teksListRekapAbsensi" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/layoutjammasukjadwal"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="#FFFFFF"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/jammasukjadwal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="08.20"
+            android:textColor="#000000"
+            android:textSize="@dimen/teksListRekapAbsensi"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutjamkeluarjadwal"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="#FFFFFF"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/jamkeluarjadwal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="17.30"
+            android:textColor="#000000"
+            android:textSize="@dimen/teksListRekapAbsensi" />
+    </RelativeLayout>
+</LinearLayout>

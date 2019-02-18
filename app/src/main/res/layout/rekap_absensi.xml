@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/baground"
+    tools:context="gmedia.net.id.absenigmedia.UangLembur">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:background="#FFFFFF">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/layoutPeriodeRekapAbsensi"
+                    android:layout_width="@dimen/widthlayoutperiode"
+                    android:layout_height="@dimen/heightlayoutperiode"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/mbunderke_tombol_cuti">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp">
+
+                        <TextView
+                            android:id="@+id/tglPeriodeRekapAbsensi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:alpha="0.5"
+                            android:text="Tanggal Mulai"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/textperiode" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/tombolperiode"
+                        android:layout_width="@dimen/widthheighttombolperiode"
+                        android:layout_height="@dimen/widthheighttombolperiode"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="30dp"
+                        android:src="@drawable/kalender" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutSampaiRekapAbsensi"
+                    android:layout_width="@dimen/widthlayoutperiode"
+                    android:layout_height="@dimen/heightlayoutperiode"
+                    android:layout_below="@+id/layoutPeriodeRekapAbsensi"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/mbunderke_tombol_cuti">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp">
+
+                        <TextView
+                            android:id="@+id/tglSampaiRekapAbsensi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:alpha="0.5"
+                            android:text="Tanggal Selesai"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/textperiode" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/tombolsampai"
+                        android:layout_width="@dimen/widthheighttombolperiode"
+                        android:layout_height="@dimen/widthheighttombolperiode"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="30dp"
+                        android:src="@drawable/kalender" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutProsesRekapAbsensi"
+                    android:layout_width="@dimen/widthlayouttombolproses"
+                    android:layout_height="@dimen/heightlayouttombolproses"
+                    android:layout_below="@+id/layoutSampaiRekapAbsensi"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/mbunderketombolproses"
+                    android:clickable="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Proses"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/textproses" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutdatarekapabsensi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layoutProsesRekapAbsensi"
+                    android:layout_marginBottom="18dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginRight="18dp"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:id="@+id/tableuanglembur"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/mbunderketable">
+
+                        <LinearLayout
+                            android:id="@+id/judulTableUangLembur"
+                            android:layout_width="match_parent"
+                            android:layout_height="64dp"
+                            android:orientation="horizontal"
+                            android:weightSum="6">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3.8">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:id="@+id/textketerangan"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:text="Keterangan"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="20dp" />
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.02"
+                                android:background="#FFFFFF">
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2.1">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:id="@+id/textjumlah"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:text="Jumlah"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="20dp" />
+                                </RelativeLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutexpand"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/judulTableUangLembur"
+                            android:layout_marginBottom="2dp"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginRight="2dp"
+                            android:background="@drawable/mbunderkeisitableuangmakan"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2dp"
+                                android:layout_marginRight="2dp"
+                                android:background="#FFFFFF"
+                                android:orientation="horizontal"
+                                android:paddingBottom="3dp"
+                                android:paddingTop="3dp"
+                                android:weightSum="2">
+
+                                <RelativeLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.23">
+
+                                    <TextView
+                                        android:id="@+id/minggu1RekapAbsensi"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="5dp"
+                                        android:text="Total Terlambat"
+                                        android:textColor="#000000"
+                                        android:textSize="15dp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/tanggal1RekapAbsensi"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignLeft="@+id/minggu1RekapAbsensi"
+                                        android:layout_below="@+id/minggu1RekapAbsensi"
+                                        android:textColor="#000000"
+                                        android:textSize="13dp" />
+                                </RelativeLayout>
+
+
+                                <RelativeLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_weight="0.77">
+
+                                    <TextView
+                                        android:id="@+id/harga1RekapAbsensi"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:textColor="#000000"
+                                        android:textSize="15dp"
+                                        android:textStyle="bold" />
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2dp"
+                                android:layout_marginRight="2dp"
+                                android:background="#FFFFFF"
+                                android:orientation="horizontal"
+                                android:paddingBottom="3dp"
+                                android:paddingTop="3dp"
+                                android:weightSum="2">
+
+                                <RelativeLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.23">
+
+                                    <TextView
+                                        android:id="@+id/minggu2RekapAbsensi"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="5dp"
+                                        android:text="Total Pulang Awal"
+                                        android:textColor="#000000"
+                                        android:textSize="15dp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/tanggal2RekapAbsensi"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignLeft="@+id/minggu2RekapAbsensi"
+                                        android:layout_below="@+id/minggu2RekapAbsensi"
+                                        android:textColor="#000000"
+                                        android:textSize="13dp" />
+                                </RelativeLayout>
+
+
+                                <RelativeLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_weight="0.77">
+
+                                    <TextView
+                                        android:id="@+id/harga2RekapAbsensi"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:textColor="#000000"
+                                        android:textSize="15dp"
+                                        android:textStyle="bold" />
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2dp"
+                                android:layout_marginRight="2dp"
+                                android:background="#FFFFFF"
+                                android:orientation="horizontal"
+                                android:paddingBottom="3dp"
+                                android:paddingTop="3dp"
+                                android:weightSum="2">
+
+                                <RelativeLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.23">
+
+                                    <TextView
+                                        android:id="@+id/minggu3RekapAbsensi"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="5dp"
+                                        android:text="Total Tdk Absen Masuk"
+                                        android:textColor="#000000"
+                                        android:textSize="15dp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/tanggal3RekapAbsensi"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignLeft="@+id/minggu3RekapAbsensi"
+                                        android:layout_below="@+id/minggu3RekapAbsensi"
+                                        android:textColor="#000000"
+                                        android:textSize="13dp" />
+                                </RelativeLayout>
+
+
+                                <RelativeLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_weight="0.77">
+
+                                    <TextView
+                                        android:id="@+id/harga3RekapAbsensi"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:textColor="#000000"
+                                        android:textSize="15dp"
+                                        android:textStyle="bold" />
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2dp"
+                                android:layout_marginRight="2dp"
+                                android:background="#FFFFFF"
+                                android:orientation="horizontal"
+                                android:paddingBottom="3dp"
+                                android:paddingTop="3dp"
+                                android:weightSum="2">
+
+                                <RelativeLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1.23">
+
+                                    <TextView
+                                        android:id="@+id/minggu4RekapAbsensi"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="5dp"
+                                        android:text="Total Tdk Absen Pulang"
+                                        android:textColor="#000000"
+                                        android:textSize="15dp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/tanggal4RekapAbsensi"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignLeft="@+id/minggu4RekapAbsensi"
+                                        android:layout_below="@+id/minggu4RekapAbsensi"
+                                        android:textColor="#000000"
+                                        android:textSize="13dp" />
+                                </RelativeLayout>
+
+
+                                <RelativeLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_weight="0.77">
+
+                                    <TextView
+                                        android:id="@+id/harga4RekapAbsensi"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:textColor="#000000"
+                                        android:textSize="15dp"
+                                        android:textStyle="bold" />
+                                </RelativeLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/downloadPDF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tableuanglembur"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/background_downloadpdf"
+                        android:clickable="true"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/iconDownloadPDF"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/download" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/iconDownloadPDF"
+                            android:text="Download File"
+                            android:textColor="#000000"
+                            android:textSize="15dp" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

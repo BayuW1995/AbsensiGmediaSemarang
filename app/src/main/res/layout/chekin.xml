@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:id="@+id/layoutcheckin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/baground"
+        android:orientation="vertical"
+        android:weightSum="20">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="60dp"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/dinotanggal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tue, 17/Apr/2018"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/textSizeDinoTanggal" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="12"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/waktuJam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/textSizeWaktu"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/waktuMenit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/textSizeWaktu"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6">
+
+            <RelativeLayout
+                android:id="@+id/tombolCheckIn"
+                android:layout_width="@dimen/setLayoutButton"
+                android:layout_height="@dimen/setLayoutButton"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bundertombolin"
+                android:clickable="true">
+
+                <TextView
+                    android:id="@+id/checkin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="CHECK IN"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/textSizeButton"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/presshere"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/checkin"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-8dp"
+                    android:text="PRESS HERE"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/textSizeTextPresshere" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>
+
+    <!--<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/dinotanggal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/marginTopDinoTanggal"
+            android:text="Mon 01/Jan/2001"
+            android:textSize="@dimen/textSizeDinoTanggal"
+            android:textColor="#FFFFFF"/>
+
+        <TextView
+            android:id="@+id/waktuJam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dinotanggal"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="-20dp"
+            android:gravity="center_horizontal"
+            android:text="00"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/textSizeWaktu"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/waktuMenit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/waktuJam"
+            android:layout_marginTop="-20dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:text="00"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/textSizeWaktu"
+            android:textStyle="bold" />
+
+        &lt;!&ndash;<TextView
+            android:id="@+id/titikdua"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/marginTopTitikDua"
+            android:text=".."
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/textSizeTitikDua"
+            android:textStyle="bold" />&ndash;&gt;
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/waktuMenit"
+            android:layout_marginTop="@dimen/margintopbutton"
+            android:layout_centerHorizontal="true">
+
+            <Button
+                android:id="@+id/checkin"
+                android:layout_width="@dimen/setLayoutButton"
+                android:layout_height="@dimen/setLayoutButton"
+                android:background="@drawable/bundertombolin"
+                android:text="CHECK IN"
+                android:textSize="@dimen/textSizeButton"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/presshere"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/waktuMenit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/marginTopTextPresshere"
+            android:text="PRESS HERE"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/textSizeTextPresshere" />
+
+    </RelativeLayout>-->

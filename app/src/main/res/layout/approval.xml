@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/baground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:background="#ecf7fd"
+        android:orientation="vertical"
+        android:weightSum="4">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:id="@+id/layoutMenuDropdownJenisIJin"
+                android:layout_width="@dimen/widthlayoutperiode"
+                android:layout_height="@dimen/heightlayoutperiode"
+                android:layout_below="@+id/layouthistoryijin"
+                android:layout_centerInParent="true"
+                android:background="@drawable/mbunderkedropdown">
+
+                <Spinner
+                    android:id="@+id/dropdownApproval"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="70dp"
+                    android:alpha="0.5"
+                    android:textAlignment="center"
+                    android:theme="@style/ThemeOverlay.AppCompat.Light" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/listApprovalIjin"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</RelativeLayout>

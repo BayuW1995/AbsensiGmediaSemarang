@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/baground"
+    tools:context="gmedia.net.id.absenigmedia.UangLembur">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:background="#FFFFFF">
+
+        <TextView
+            android:id="@+id/textuanglembur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:text="Total sementara uang lembur anda"
+            android:textColor="#145692"
+            android:textSize="15dp" />
+
+        <RelativeLayout
+            android:id="@+id/uanglembur"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
+            android:layout_below="@+id/textuanglembur"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp">
+
+            <!--<TextView
+                android:id="@+id/textRPlembur"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="Rp"
+                android:textColor="#145692"
+                android:textSize="30dp" />-->
+
+            <TextView
+                android:id="@+id/text80"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#145692"
+                android:textSize="60dp"
+                android:textStyle="bold" />
+
+            <!--<TextView
+                android:id="@+id/text000lembur"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="3dp"
+                android:layout_toRightOf="@+id/text80"
+                android:text=".000"
+                android:textColor="#145692"
+                android:textSize="40dp" />-->
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tableuanglembur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/uanglembur"
+            android:layout_marginBottom="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginTop="55dp"
+            android:background="@drawable/mbunderketable">
+
+            <LinearLayout
+                android:id="@+id/judulTableUangLembur"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:orientation="horizontal"
+                android:weightSum="6">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3.8">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textketerangan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Keterangan"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20dp" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.02"
+                    android:background="#FFFFFF">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.1">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textjumlah"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Jumlah"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20dp"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/layoutexpand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/judulTableUangLembur"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:background="@drawable/mbunderkeisitableuangmakan">
+
+                <ExpandableListView
+                    android:id="@+id/expanded_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:animationCache="false"
+                    android:drawingCacheQuality="low"
+                    android:scrollingCache="false"
+                    android:smoothScrollbar="true"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

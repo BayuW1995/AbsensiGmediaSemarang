@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Absensi Gmedia</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="runtime_permissions_txt">Please enable requested service</string>
+    <string name="action_settings">Settings</string>
+    <string name="textDrawer1">Absen</string>
+    <string name="textDrawer2">Uang Makan</string>
+    <string name="textDrawer3">Uang Lembur</string>
+    <string name="textDrawer4">Pengajuan Cuti</string>
+    <string name="textDrawer5">Rekap Absensi</string>
+    <string name="textDrawer6">Logout</string>
+    <string name="acc_drawer_open">Open</string>
+    <string name="teks_1">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    </string>
+    <string name="teks_2">
+        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
+        Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form,
+        accompanied by English versions from the 1914 translation by H. Rackham.
+    </string>
+    <string name="acc_drawer_close">Closed</string>
+    <string name="title_activity_dashboard_baru">DashboardBaru</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_notification_channel_name" translatable="true">News</string>
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+</resources>

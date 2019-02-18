@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/empty"
+        android:icon="@drawable/absen"
+        android:orderInCategory="101"
+        android:title="Option"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/action_password"
+                android:icon="@drawable/notif"
+                android:title="Ganti Password"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/action_settings"
+                android:icon="@drawable/peringatan"
+                android:title="Setting"
+                app:showAsAction="ifRoom"
+                tools:ignore="AppCompatResource" />
+        </menu>
+    </item>
+</menu>

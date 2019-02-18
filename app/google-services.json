@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "379541300145",
+    "firebase_url": "https://absensi-gmedia-semarang.firebaseio.com",
+    "project_id": "absensi-gmedia-semarang",
+    "storage_bucket": "absensi-gmedia-semarang.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:379541300145:android:1cb934948e2792b0",
+        "android_client_info": {
+          "package_name": "gmedia.net.id.absenigmedia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "379541300145-j8ukloe13b6p3g9627iu5go66v9g9ruu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "gmedia.net.id.absenigmedia",
+            "certificate_hash": "5ebfb2388f680e827a9eeda45101695681e51e0d"
+          }
+        },
+        {
+          "client_id": "379541300145-814qm0g0h773dkk21mloqieum0mccld7.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "379541300145-814qm0g0h773dkk21mloqieum0mccld7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcniSePOZuAqrhdRxTMdMPp0xcpuHWK7M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "379541300145-814qm0g0h773dkk21mloqieum0mccld7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

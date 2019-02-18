@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ecf7fd">
+
+    <RelativeLayout
+        android:layout_width="@dimen/widthviewhistory"
+        android:layout_height="@dimen/heightviewhistory"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/background_recycler_history">
+
+        <TextView
+            android:id="@+id/judul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:text="Permintaan cuti sedang di proses"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/textjudulviewhistory"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/mulaicuti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/judul"
+            android:layout_below="@+id/judul"
+            android:layout_marginTop="10dp"
+            android:text="Mulai"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/textisiviewhistory"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textmulaicuti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/mulaicuti"
+            android:layout_below="@+id/mulaicuti"
+            android:text="Selasa, 14-11-2017"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/textisiviewhistory" />
+
+        <TextView
+            android:id="@+id/sampaicuti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/mulaicuti"
+            android:layout_below="@+id/textmulaicuti"
+            android:text="Sampai"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/textisiviewhistory"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textsampaicuti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/mulaicuti"
+            android:layout_below="@+id/sampaicuti"
+            android:text="Rabu, 15-11-2017"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/textisiviewhistory" />
+
+        <TextView
+            android:id="@+id/keterangancuti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/mulaicuti"
+            android:layout_below="@+id/textsampaicuti"
+            android:text="Keterangan"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/textisiviewhistory"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textketeranganhistory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/mulaicuti"
+            android:layout_below="@+id/keterangancuti"
+            android:text="Acara Keluarga"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/textisiviewhistory" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/textketeranganhistory">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cancelHistory"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/mbunderketombolcancelhistory"
+                    android:text="Cancel Request"
+                    android:textColor="#ffffff" />
+
+                <Button
+                    android:id="@+id/editHistory"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/btn_edit_history"
+                    android:text="Edit Request"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

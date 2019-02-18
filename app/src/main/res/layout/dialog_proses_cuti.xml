@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/popupcuti"
+        android:layout_width="220dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/mbunderke_progress_cuti"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <RelativeLayout
+            android:id="@+id/layoutprosescuti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/proses"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/spinner" />
+
+            <TextView
+                android:id="@+id/cutiproses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/proses"
+                android:layout_centerHorizontal="true"
+                android:text="Cuti anda sedang diproses"
+                android:textColor="#145692"
+                android:textSize="15dp" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/keluarprogress"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignRight="@+id/popupcuti"
+        android:layout_alignTop="@+id/popupcuti"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp">
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/close" />
+    </RelativeLayout>
+
+</RelativeLayout><!--<TextView
+               android:id="@+id/textmulai"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/layoutprosescuti"
+               android:layout_marginLeft="25dp"
+               android:text="Mulai"
+               android:textColor="#000000"
+               android:textSize="15dp"
+               android:textStyle="bold" />
+
+           <TextView
+               android:id="@+id/texttanggalmulai"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignLeft="@+id/textmulai"
+               android:layout_below="@+id/textmulai"
+               android:text="Selasa, 14-11-2017"
+               android:textColor="#000000"
+               android:textSize="15dp" />
+
+           <TextView
+               android:id="@+id/textsampai"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignLeft="@+id/textmulai"
+               android:layout_below="@+id/texttanggalmulai"
+               android:text="Sampai"
+               android:textColor="#000000"
+               android:textSize="15dp"
+               android:textStyle="bold" />
+
+           <TextView
+               android:id="@+id/texttanggalselesai"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignLeft="@+id/textmulai"
+               android:layout_below="@+id/textsampai"
+               android:text="Rabu, 15-11-2017"
+               android:textColor="#000000"
+               android:textSize="15dp" />
+
+           <TextView
+               android:id="@+id/textketerangancuti"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignLeft="@+id/textmulai"
+               android:layout_below="@+id/texttanggalselesai"
+               android:text="Keterangan"
+               android:textColor="#000000"
+               android:textSize="15dp"
+               android:textStyle="bold" />
+
+           <TextView
+               android:id="@+id/textalasanketerangan"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignLeft="@+id/textmulai"
+               android:layout_below="@+id/textketerangancuti"
+               android:layout_marginBottom="10dp"
+               android:text="Acara Keluarga"
+               android:textColor="#000000"
+               android:textSize="15dp" />-->

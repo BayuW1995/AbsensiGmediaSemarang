@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/baground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+        android:weightSum="10"
+        android:background="#ecf7fd">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/btnTglScanLog"
+                android:layout_width="@dimen/widthlayoutperiode"
+                android:layout_height="@dimen/heightlayoutperiode"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/mbunderke_tombol_cuti">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="30dp">
+
+                    <TextView
+                        android:id="@+id/tglScanLog"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:alpha="0.5"
+                        android:text="Silahkan Isi Tanggal"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/textperiode" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/tombolAwalJadwal"
+                    android:layout_width="@dimen/widthheighttombolperiode"
+                    android:layout_height="@dimen/widthheighttombolperiode"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/kalender" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/btnProsesScanLog"
+                android:layout_width="@dimen/widthlayouttombolproses"
+                android:layout_height="@dimen/heightlayouttombolproses"
+                android:layout_below="@+id/layoutAkhirJadwal"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/mbunderketombolproses"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Proses"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/textproses" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/dataScanLog"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="6"
+            android:visibility="gone">
+
+            <include layout="@layout/layout_data_scan_log" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

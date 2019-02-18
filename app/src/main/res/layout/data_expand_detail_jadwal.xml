@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutdatarekapabsensi"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="10">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5">
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="9">
+
+        <LinearLayout
+            android:id="@+id/judulListDetailJadwal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:weightSum="12">
+
+            <RelativeLayout
+                android:id="@+id/layoutharitanggaljadwal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/layoutharitanggal"
+                android:layout_weight="4"
+                android:background="#2b588b">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/textharijadwal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Hari /"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/text" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textharijadwal"
+                        android:layout_centerHorizontal="true"
+                        android:text="Tanggal"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/text" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layoutshiftjadwal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="2"
+                android:background="#2b588b">
+
+                <TextView
+                    android:id="@+id/textshift"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Shift"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/text" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/layoutjammasukjadwal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="3"
+                android:background="#2b588b">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/textjammasukjadwal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Jam"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/text" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textjammasukjadwal"
+                        android:layout_centerHorizontal="true"
+                        android:text="Masuk"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/text" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layoutjamkeluarjadwal"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_weight="3"
+                android:background="#2b588b">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/textjamkeluarjadwal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Jam"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/text" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textjamkeluarjadwal"
+                        android:layout_centerHorizontal="true"
+                        android:text="Keluar"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/text" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutListJadwal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/judulListDetailJadwal"
+            android:layout_marginBottom="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/titledatarekapabsensi"
+                android:background="#2b588b"
+                android:paddingBottom="2dp"
+                android:paddingLeft="2dp"
+                android:paddingRight="2dp">
+
+                <ListView
+                    android:id="@+id/listJadwalExpand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="true"
+                    android:background="#2b588b"
+                    android:scrollbars="none" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5">
+
+    </LinearLayout>
+</LinearLayout><!--<RelativeLayout
+        android:id="@+id/titledatarekapabsensi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp">
+
+
+
+        <RelativeLayout
+            android:id="@+id/layoutjammasuk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/layoutharitanggal"
+            android:background="#2b588b"
+            android:paddingBottom="5dp"
+            android:paddingLeft="@dimen/paddingjam"
+            android:paddingRight="@dimen/paddingjam"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/textjam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Jam"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textjam"
+                android:layout_centerHorizontal="true"
+                android:text="Masuk"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/text" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layoutjamkeluar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/layoutjammasuk"
+            android:background="#2b588b"
+            android:paddingBottom="5dp"
+            android:paddingLeft="@dimen/paddingjam"
+            android:paddingRight="@dimen/paddingjam"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/textjam2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Jam"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textjam2"
+                android:layout_centerHorizontal="true"
+                android:text="Keluar"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/text" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/layouttelat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:layout_toRightOf="@+id/layoutjamkeluar"
+            android:background="#2b588b"
+            android:paddingLeft="@dimen/paddingjam"
+            android:paddingRight="@dimen/paddingjam"
+            android:paddingBottom="4.5dp"
+            android:paddingTop="4.5dp">
+            <TextView
+                android:id="@+id/texttelat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Telat"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/text"/>
+            <TextView
+                android:id="@+id/textmenit"
+                android:layout_below="@+id/texttelat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="(menit)"
+                android:textColor="#FFFFFF"/>
+        </RelativeLayout>
+    </RelativeLayout>-->
+
+    <!--<RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titledatarekapabsensi"
+        android:background="#2b588b"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:paddingBottom="2dp"
+        android:layout_marginRight="@dimen/marginrightlistview"
+        android:layout_marginBottom="18dp"
+        android:layout_marginLeft="@dimen/marginleftlistview">
+        <ListView
+            android:id="@+id/listAbsen"
+            android:background="#2b588b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>-->

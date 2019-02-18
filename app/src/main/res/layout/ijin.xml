@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/baground">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:background="#ecf7fd"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:id="@+id/layoutijin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/layouthistoryijin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/ijin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:clickable="true"
+                    android:text="Lihat History"
+                    android:textColor="#145692"
+                    android:textSize="@dimen/texthistory" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layoutMenuDropdownJenisIJin"
+                android:layout_width="@dimen/widthlayoutperiode"
+                android:layout_height="@dimen/heightlayoutperiode"
+                android:layout_below="@+id/layouthistoryijin"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/mbunderkedropdown">
+
+                <Spinner
+                    android:id="@+id/menuDropdownJenisIjin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="70dp"
+                    android:alpha="0.5"
+                    android:textAlignment="center"
+                    android:theme="@style/ThemeOverlay.AppCompat.Light" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layoutGanti2Ijin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layoutMenuDropdownJenisIJin"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/layouttglmulaiijin"
+                    android:layout_width="@dimen/widthlayoutperiode"
+                    android:layout_height="@dimen/heightlayoutperiode"
+                    android:layout_below="@+id/layoutmenudropdown"
+                    android:background="@drawable/mbunderke_tombol_cuti">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp">
+
+                        <TextView
+                            android:id="@+id/texttglmulaiijin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:alpha="0.5"
+                            android:text="Tanggal Mulai"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/textperiode" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/tomboltglmulai"
+                        android:layout_width="@dimen/widthheighttombolperiode"
+                        android:layout_height="@dimen/widthheighttombolperiode"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="30dp"
+                        android:src="@drawable/kalender" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutMenuDropdownApproval"
+                    android:layout_width="@dimen/widthlayoutperiode"
+                    android:layout_height="@dimen/heightlayoutperiode"
+                    android:layout_below="@+id/layoutMenuDropdownJenisIJin"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/mbunderkedropdown"
+                    android:visibility="invisible"
+                    tools:ignore="NotSibling">
+
+                    <Spinner
+                        android:id="@+id/menuDropdownApproval"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="70dp"
+                        android:alpha="0.5"
+                        android:textAlignment="center"
+                        android:theme="@style/ThemeOverlay.AppCompat.Light" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutTimePixer"
+                    android:layout_width="@dimen/widthlayoutperiode"
+                    android:layout_height="@dimen/heightlayoutperiode"
+                    android:layout_below="@+id/layouttglmulaiijin"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/mbunderke_tombol_cuti"
+                    android:clickable="true"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp">
+
+                        <TextView
+                            android:id="@+id/textTimePixer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:alpha="0.5"
+                            android:text="Jam"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/textperiode" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/tombolTimePixer"
+                        android:layout_width="@dimen/widthheighttombolperiode"
+                        android:layout_height="@dimen/widthheighttombolperiode"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="30dp"
+                        android:src="@drawable/kalender" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutInputMulaiKeluarKantor"
+                    android:layout_width="@dimen/widthlayoutperiode"
+                    android:layout_height="@dimen/heightlayoutperiode"
+                    android:layout_below="@+id/layouttglmulaiijin"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/mbunderke_tombol_cuti"
+                    android:clickable="true"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp">
+
+                        <TextView
+                            android:id="@+id/textMulai"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:alpha="0.5"
+                            android:text="Jam Mulai"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/textperiode" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/tombolTimePixerMulai"
+                        android:layout_width="@dimen/widthheighttombolperiode"
+                        android:layout_height="@dimen/widthheighttombolperiode"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="30dp"
+                        android:src="@drawable/kalender" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutInputSelesaiKeluarKantor"
+                    android:layout_width="@dimen/widthlayoutperiode"
+                    android:layout_height="@dimen/heightlayoutperiode"
+                    android:layout_below="@+id/layoutInputMulaiKeluarKantor"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/mbunderke_tombol_cuti"
+                    android:clickable="true"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp">
+
+                        <TextView
+                            android:id="@+id/textSelesai"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:alpha="0.5"
+                            android:text="Jam Selesai"
+                            android:textColor="#ffffff"
+                            android:textSize="@dimen/textperiode" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/tombolTimePixerSelesai"
+                        android:layout_width="@dimen/widthheighttombolperiode"
+                        android:layout_height="@dimen/widthheighttombolperiode"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="30dp"
+                        android:src="@drawable/kalender" />
+                </RelativeLayout>
+            </RelativeLayout>
+            <!--<RelativeLayout
+                android:id="@+id/layoutInputKeluarKantor"
+                android:layout_width="@dimen/widthlayoutperiode"
+                android:layout_height="@dimen/heightlayoutperiode"
+                android:layout_below="@+id/layouttglmulaiijin"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/mbunderke_tombol_cuti"
+                android:clickable="true"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/textInputKeluarKantor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/mbunderke_input_keluar_kantor"
+                    android:hint="Lama Ijin (menit)"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textColorHint="#30000000"
+                    android:textSize="@dimen/textperiode" />
+            </RelativeLayout>
+        </RelativeLayout>-->
+
+
+            <!--<RelativeLayout
+                android:id="@+id/layouttglselesai"
+                android:layout_width="@dimen/widthlayoutperiode"
+                android:layout_height="@dimen/heightlayoutperiode"
+                android:layout_below="@+id/layouttglmulai"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/mbunderke_tombol_cuti">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="30dp">
+
+                    <TextView
+                        android:id="@+id/texttglselesai"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:alpha="0.5"
+                        android:text="Tanggal Selesai"
+                        android:textColor="#ffffff"
+                        android:textSize="@dimen/textperiode" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/tomboltglselesai"
+                    android:layout_width="@dimen/widthheighttombolperiode"
+                    android:layout_height="@dimen/widthheighttombolperiode"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:src="@drawable/kalender" />
+            </RelativeLayout>-->
+
+
+            <TextView
+                android:id="@+id/keterangan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layoutGanti2Ijin"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="20dp"
+                android:text="Keterangan :"
+                android:textColor="#145692"
+                android:textSize="@dimen/texthistory" />
+
+            <EditText
+                android:id="@+id/edit_text_keterangan_historyijin"
+                android:layout_width="@dimen/widthedittext"
+                android:layout_height="@dimen/heightedittext"
+                android:layout_below="@+id/keterangan"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:background="@drawable/mbunderke_edittext"
+                android:gravity="start"
+                android:paddingLeft="8dp"
+                android:textAlignment="textStart"
+                android:textColor="#000000"
+                android:textCursorDrawable="@null" />
+
+            <RelativeLayout
+                android:id="@+id/layoutkirimhistoryijin"
+                android:layout_width="@dimen/widthlayouttombolproses"
+                android:layout_height="@dimen/heightlayouttombolproses"
+                android:layout_below="@+id/edit_text_keterangan_historyijin"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/mbunderketombolproses"
+                android:clickable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Kirim"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/textproses"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
