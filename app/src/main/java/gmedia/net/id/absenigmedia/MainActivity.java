@@ -225,8 +225,16 @@ public class MainActivity extends RuntimePermissionsActivity
 				dialog.setContentView(R.layout.popup_pilihan_setting);
 				dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 				dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+
+				LinearLayout layoutUtama = (LinearLayout) dialog.findViewById(R.id.layoutUtamaPopupPilihanSetting);
+				layoutUtama.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						dialog.dismiss();
+					}
+				});
+
 				LinearLayout btnGantiPassword = (LinearLayout) dialog.findViewById(R.id.btnGantiPassword);
-				LinearLayout btnEditPin = (LinearLayout) dialog.findViewById(R.id.btnEditPin);
 				btnGantiPassword.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View v) {
@@ -234,6 +242,8 @@ public class MainActivity extends RuntimePermissionsActivity
 						preparePopupGantiPassword();
 					}
 				});
+
+				LinearLayout btnEditPin = (LinearLayout) dialog.findViewById(R.id.btnEditPin);
 				btnEditPin.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View v) {
@@ -242,6 +252,7 @@ public class MainActivity extends RuntimePermissionsActivity
 //						preparePopupInputPin();
 					}
 				});
+
 				dialog.show();
 //                showPopupMenu(buttonSettting);
 			}
@@ -767,7 +778,7 @@ public class MainActivity extends RuntimePermissionsActivity
 		final Dialog dialog = new Dialog(MainActivity.this);
 		dialog.setContentView(R.layout.popup_edit_pin);
 		dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//		dialog.setCanceledOnTouchOutside(false);
+		dialog.setCanceledOnTouchOutside(false);
 		final ImageView visiblePassLama = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.visiblePassLama);
 		final ImageView visiblePassBaru = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.visiblePassBaru);
 		final ImageView visibleRePassBaru = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.visibleRePassBaru);
