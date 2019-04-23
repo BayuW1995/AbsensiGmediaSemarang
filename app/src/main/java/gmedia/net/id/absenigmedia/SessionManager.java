@@ -40,6 +40,7 @@ public class SessionManager {
 	public static final String KEY_NIP = "Nip";
 	public static final String KEY_APPROVAL = "approval";
 	public static final String KEY_REGIONAL = "0";
+	public static final String KEY_PIN = "0";
 
 	// Email address (make variable public to access from outside)
 	public static final String KEY_EMAIL = "email";
@@ -69,6 +70,11 @@ public class SessionManager {
 		// commit changes
 		editor.commit();
 	}
+
+	/*public void createPIN(String pin) {
+		editor.putString(KEY_PIN, pin);
+		editor.commit();
+	}*/
 
 	public void createRegional(String regional) {
 		editor.putBoolean(IS_REGIONAL, true);
@@ -125,6 +131,10 @@ public class SessionManager {
 		return pref.getString(KEY_REGIONAL, "0");
 	}
 
+//	public String getPIN() {
+//		return pref.getString(KEY_PIN, "0");
+//	}
+
 	/**
 	 * Clear session details
 	 */
@@ -140,6 +150,7 @@ public class SessionManager {
 		editor.putString(KEY_TOKEN, "");
 		editor.putString(KEY_NIP, "");
 		editor.putString(KEY_APPROVAL, "");
+//		editor.putString(KEY_PIN, "");
 		editor.commit();
 
 		// After logout redirect user to Loing Activity

@@ -124,7 +124,7 @@ public class Login extends AppCompatActivity {
 				posisiMenuRegional = String.valueOf(menuRegional.getSelectedItemPosition());
 //				posisiMenuRegional = menuRegional.getSelectedItem().toString();
 //				Log.d("spinner", posisiMenuRegional);
-				((TextView) parent.getChildAt(0)).setTextColor(Color.parseColor("#FFFFFF"));
+//				((TextView) parent.getChildAt(0)).setTextColor(Color.parseColor("#FFFFFF"));
 			}
 
 			@Override

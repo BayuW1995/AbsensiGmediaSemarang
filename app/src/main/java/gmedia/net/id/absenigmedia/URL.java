@@ -40,4 +40,7 @@ public class URL {
     public static String urlChangeLog = BaseUrl + "changelog";
     public static String urlAsuransi = BaseUrl + "asuransi";
     public static String urlCicilHutang = BaseUrl + "hutang";
+	public static String urlEditPIN = BaseUrl + "update_pin";
+	public static String urlCreatePIN = BaseUrl + "create_pin";
+	public static String urlSlipGaji = BaseUrl + "payroll";
 }

@@ -17,8 +17,6 @@ import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.os.Environment;
 import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.NavigationView;
@@ -35,11 +33,13 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -61,7 +61,6 @@ import gmedia.net.id.absenigmedia.Volley.ApiVolley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
 import java.util.ArrayList;
 
 public class MainActivity extends RuntimePermissionsActivity
@@ -74,9 +73,12 @@ public class MainActivity extends RuntimePermissionsActivity
 	public static DrawerLayout drawer;
 	public static TextView title;
 	private EditText passLama, passBaru, rePassBaru;
+	private EditText passLamaEditPin, passBaruEditPin, rePassBaruEditPin;
+	private EditText inputPIN;
 	private Boolean klikToVisiblePassLama = true;
 	private Boolean klikToVisiblePassBaru = true;
 	private Boolean klikToVisibleRePassBaru = true;
+	private Boolean klikToVisibleReInputPIN = true;
 	public static boolean isCuti = true;
 	public static boolean isIjin = true;
 	public static boolean isApproval = true;
@@ -92,6 +94,7 @@ public class MainActivity extends RuntimePermissionsActivity
 					gmedia.net.id.absenigmedia.R.drawable.profile,
 					gmedia.net.id.absenigmedia.R.drawable.uang_makan,
 					gmedia.net.id.absenigmedia.R.drawable.uanglembur,
+					R.drawable.icon_slip_gaji,
 					gmedia.net.id.absenigmedia.R.drawable.potongan,
 					gmedia.net.id.absenigmedia.R.drawable.pengajuan_cuti,
 					gmedia.net.id.absenigmedia.R.drawable.ijin,
@@ -110,6 +113,7 @@ public class MainActivity extends RuntimePermissionsActivity
 					"Jadwal TS",
 					"Uang Makan",
 					"Uang Lembur",
+					"Slip Gaji",
 					"Potongan Gaji",
 					"Cuti",
 					"Ijin",
@@ -148,6 +152,7 @@ public class MainActivity extends RuntimePermissionsActivity
 	private Location location;
 	private double latitude, longitude;
 	private boolean dialogActive = false;
+	private SessionManager session;
 
 	//    private CustomMapView mvMap;
 //    private GoogleMap googleMap;
@@ -157,6 +162,7 @@ public class MainActivity extends RuntimePermissionsActivity
 		super.onCreate(savedInstanceState);
 		setContentView(gmedia.net.id.absenigmedia.R.layout.activity_main);
 		dialogActive = false;
+		session = new SessionManager(getApplicationContext());
         /*Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         if (bundle.getString("About")!=null) {
@@ -215,117 +221,29 @@ public class MainActivity extends RuntimePermissionsActivity
 		buttonSettting.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-//                showPopupMenu(buttonSettting);
 				final Dialog dialog = new Dialog(MainActivity.this);
-				dialog.setContentView(gmedia.net.id.absenigmedia.R.layout.popup_ganti_password);
+				dialog.setContentView(R.layout.popup_pilihan_setting);
 				dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-				final ImageView visiblePassLama = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.visiblePassLama);
-				final ImageView visiblePassBaru = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.visiblePassBaru);
-				final ImageView visibleRePassBaru = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.visibleRePassBaru);
-				passLama = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.passLama);
-				passBaru = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.passBaru);
-				rePassBaru = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.reTypePassBaru);
-				visiblePassLama.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						if (klikToVisiblePassLama) {
-							visiblePassLama.setImageDrawable(getResources().getDrawable(gmedia.net.id.absenigmedia.R.drawable.visible));
-							passLama.setInputType(InputType.TYPE_CLASS_TEXT);
-							klikToVisiblePassLama = false;
-						} else {
-							visiblePassLama.setImageDrawable(getResources().getDrawable(gmedia.net.id.absenigmedia.R.drawable.invisible));
-							passLama.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-							passLama.setTransformationMethod(PasswordTransformationMethod.getInstance());
-							klikToVisiblePassLama = true;
-						}
-					}
-				});
-				visiblePassBaru.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						if (klikToVisiblePassBaru) {
-							visiblePassBaru.setImageDrawable(getResources().getDrawable(gmedia.net.id.absenigmedia.R.drawable.visible));
-							passBaru.setInputType(InputType.TYPE_CLASS_TEXT);
-							klikToVisiblePassBaru = false;
-						} else {
-							visiblePassBaru.setImageDrawable(getResources().getDrawable(gmedia.net.id.absenigmedia.R.drawable.invisible));
-							passBaru.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-							passBaru.setTransformationMethod(PasswordTransformationMethod.getInstance());
-							klikToVisiblePassBaru = true;
-						}
-					}
-				});
-				visibleRePassBaru.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						if (klikToVisibleRePassBaru) {
-							visibleRePassBaru.setImageDrawable(getResources().getDrawable(gmedia.net.id.absenigmedia.R.drawable.visible));
-							rePassBaru.setInputType(InputType.TYPE_CLASS_TEXT);
-							klikToVisibleRePassBaru = false;
-						} else {
-							visibleRePassBaru.setImageDrawable(getResources().getDrawable(gmedia.net.id.absenigmedia.R.drawable.invisible));
-							rePassBaru.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-							rePassBaru.setTransformationMethod(PasswordTransformationMethod.getInstance());
-							klikToVisibleRePassBaru = true;
-						}
-					}
-				});
-				RelativeLayout OK = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.tombolOKgantiPassword);
-				OK.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-
-						// validasi
-						if (passLama.getText().toString().isEmpty()) {
-							passLama.setError("Password lama harap diisi");
-							passLama.requestFocus();
-							return;
-						} else {
-							passLama.setError(null);
-						}
-
-						if (passBaru.getText().toString().isEmpty()) {
-							passBaru.setError("Password baru harap diisi");
-							passBaru.requestFocus();
-							return;
-						} else {
-							passBaru.setError(null);
-						}
-
-						if (rePassBaru.getText().toString().isEmpty()) {
-							rePassBaru.setError("Password baru ulang harap diisi");
-							rePassBaru.requestFocus();
-							return;
-						} else {
-							rePassBaru.setError(null);
-						}
-						if (!rePassBaru.getText().toString().equals(passBaru.getText().toString())) {
-							rePassBaru.setError("Password ulang tidak sama");
-							rePassBaru.requestFocus();
-							return;
-						} else {
-							rePassBaru.setError(null);
-						}
-						prepareDataGantiPassword();
-						dialog.dismiss();
-					}
-				});
-				RelativeLayout cancel = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.tombolcancelGantiPassword);
-				cancel.setOnClickListener(new View.OnClickListener() {
+				dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+				LinearLayout btnGantiPassword = (LinearLayout) dialog.findViewById(R.id.btnGantiPassword);
+				LinearLayout btnEditPin = (LinearLayout) dialog.findViewById(R.id.btnEditPin);
+				btnGantiPassword.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View v) {
 						dialog.dismiss();
+						preparePopupGantiPassword();
 					}
 				});
-				dialog.setCanceledOnTouchOutside(false);
+				btnEditPin.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						dialog.dismiss();
+						preparePopupEditPin();
+//						preparePopupInputPin();
+					}
+				});
 				dialog.show();
-                /*if (popup) {
-                    popupmenu.setVisibility(View.VISIBLE);
-                    popup = false;
-                } else {
-                    popupmenu.setVisibility(View.GONE);
-                    popup = true;
-                }*/
+//                showPopupMenu(buttonSettting);
 			}
 		});
 		listView = (ListView) findViewById(gmedia.net.id.absenigmedia.R.id.listmenu);
@@ -403,6 +321,14 @@ public class MainActivity extends RuntimePermissionsActivity
 						posisi = false;
 						break;
 					case 8:
+						fragment = new SlipGaji();
+						callFragment(fragment);
+						title.setText("Slip Gaji");
+						title.setTypeface(Typeface.createFromAsset(MainActivity.this.getAssets(), "fonts/Helvetica-Bold.otf"));
+						finalDrawer.closeDrawer(GravityCompat.START);
+						posisi = false;
+						break;
+					case 9:
 						fragment = new Potongan();
 						callFragment(fragment);
 						title.setText("Potongan Gaji");
@@ -410,7 +336,7 @@ public class MainActivity extends RuntimePermissionsActivity
 						finalDrawer.closeDrawer(GravityCompat.START);
 						posisi = false;
 						break;
-					case 9:
+					case 10:
 						fragment = new Cuti();
 						callFragment(fragment);
 						title.setText("Cuti");
@@ -418,7 +344,7 @@ public class MainActivity extends RuntimePermissionsActivity
 						finalDrawer.closeDrawer(GravityCompat.START);
 						posisi = false;
 						break;
-					case 10:
+					case 11:
 						fragment = new Ijin();
 						callFragment(fragment);
 						title.setText("Ijin");
@@ -426,7 +352,7 @@ public class MainActivity extends RuntimePermissionsActivity
 						finalDrawer.closeDrawer(GravityCompat.START);
 						posisi = false;
 						break;
-					case 11:
+					case 12:
 						fragment = new RekapAbsensi();
 						callFragment(fragment);
 						title.setText("Rekap Absensi");
@@ -434,7 +360,7 @@ public class MainActivity extends RuntimePermissionsActivity
 						finalDrawer.closeDrawer(GravityCompat.START);
 						posisi = false;
 						break;
-					case 12:
+					case 13:
 						fragment = new RekapitulasiAbsensi();
 						callFragment(fragment);
 						title.setText("Rekapitulasi Absensi");
@@ -442,7 +368,7 @@ public class MainActivity extends RuntimePermissionsActivity
 						finalDrawer.closeDrawer(GravityCompat.START);
 						posisi = false;
 						break;
-					case 13:
+					case 14:
 						fragment = new About();
 						callFragment(fragment);
 						title.setText("About");
@@ -450,7 +376,7 @@ public class MainActivity extends RuntimePermissionsActivity
 						finalDrawer.closeDrawer(GravityCompat.START);
 						posisi = false;
 						break;
-					case 14:
+					case 15:
 						SessionManager session = new SessionManager(getApplicationContext());
 						session.logoutUser();
 						break;
@@ -479,6 +405,7 @@ public class MainActivity extends RuntimePermissionsActivity
             }
         }*/
 		prepareBiodataDrawer();
+
 //        checkVersion();
         /*TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
         String imei = telephonyManager.getDeviceId();*/
@@ -559,6 +486,7 @@ public class MainActivity extends RuntimePermissionsActivity
         createLocationRequest();
         buildLocationSettingsRequest();*/
 	}
+
 
 	public void statusCheck() {
 		final LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -773,6 +701,7 @@ public class MainActivity extends RuntimePermissionsActivity
 		if (android.os.Build.VERSION.SDK_INT > 25) {
 			statusCheck();
 		}
+
 	}
 
 	private void checkVersion() {
@@ -832,6 +761,266 @@ public class MainActivity extends RuntimePermissionsActivity
 				Toast.makeText(getApplicationContext(), "Terjadi kesalahan check version", Toast.LENGTH_LONG).show();
 			}
 		});
+	}
+
+	private void preparePopupEditPin() {
+		final Dialog dialog = new Dialog(MainActivity.this);
+		dialog.setContentView(R.layout.popup_edit_pin);
+		dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//		dialog.setCanceledOnTouchOutside(false);
+		final ImageView visiblePassLama = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.visiblePassLama);
+		final ImageView visiblePassBaru = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.visiblePassBaru);
+		final ImageView visibleRePassBaru = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.visibleRePassBaru);
+		passLamaEditPin = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.passLama);
+		passBaruEditPin = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.passBaru);
+		rePassBaruEditPin = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.reTypePassBaru);
+		visiblePassLama.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (klikToVisiblePassLama) {
+					visiblePassLama.setImageDrawable(getResources().getDrawable(gmedia.net.id.absenigmedia.R.drawable.visible));
+					passLamaEditPin.setInputType(InputType.TYPE_CLASS_NUMBER);
+					klikToVisiblePassLama = false;
+				} else {
+					visiblePassLama.setImageDrawable(getResources().getDrawable(gmedia.net.id.absenigmedia.R.drawable.invisible));
+					passLamaEditPin.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_PASSWORD);
+					passLamaEditPin.setTransformationMethod(PasswordTransformationMethod.getInstance());
+					klikToVisiblePassLama = true;
+				}
+			}
+		});
+		visiblePassBaru.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (klikToVisiblePassBaru) {
+					visiblePassBaru.setImageDrawable(getResources().getDrawable(gmedia.net.id.absenigmedia.R.drawable.visible));
+					passBaruEditPin.setInputType(InputType.TYPE_CLASS_NUMBER);
+					klikToVisiblePassBaru = false;
+				} else {
+					visiblePassBaru.setImageDrawable(getResources().getDrawable(gmedia.net.id.absenigmedia.R.drawable.invisible));
+					passBaruEditPin.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_PASSWORD);
+					passBaruEditPin.setTransformationMethod(PasswordTransformationMethod.getInstance());
+					klikToVisiblePassBaru = true;
+				}
+			}
+		});
+		visibleRePassBaru.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (klikToVisibleRePassBaru) {
+					visibleRePassBaru.setImageDrawable(getResources().getDrawable(gmedia.net.id.absenigmedia.R.drawable.visible));
+					rePassBaruEditPin.setInputType(InputType.TYPE_CLASS_NUMBER);
+					klikToVisibleRePassBaru = false;
+				} else {
+					visibleRePassBaru.setImageDrawable(getResources().getDrawable(gmedia.net.id.absenigmedia.R.drawable.invisible));
+					rePassBaruEditPin.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_PASSWORD);
+					rePassBaruEditPin.setTransformationMethod(PasswordTransformationMethod.getInstance());
+					klikToVisibleRePassBaru = true;
+				}
+			}
+		});
+		RelativeLayout OK = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.tombolOKgantiPassword);
+		OK.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+
+				// validasi
+				if (passLamaEditPin.getText().toString().isEmpty()) {
+					passLamaEditPin.setError("Password lama harap diisi");
+					passLamaEditPin.requestFocus();
+					return;
+				} else {
+					passLamaEditPin.setError(null);
+				}
+
+				if (passBaruEditPin.getText().toString().isEmpty()) {
+					passBaruEditPin.setError("Password baru harap diisi");
+					passBaruEditPin.requestFocus();
+					return;
+				} else {
+					passBaruEditPin.setError(null);
+				}
+
+				if (rePassBaruEditPin.getText().toString().isEmpty()) {
+					rePassBaruEditPin.setError("Password baru ulang harap diisi");
+					rePassBaruEditPin.requestFocus();
+					return;
+				} else {
+					rePassBaruEditPin.setError(null);
+				}
+				if (!rePassBaruEditPin.getText().toString().equals(passBaruEditPin.getText().toString())) {
+					rePassBaruEditPin.setError("Password ulang tidak sama");
+					rePassBaruEditPin.requestFocus();
+					return;
+				} else {
+					rePassBaruEditPin.setError(null);
+				}
+				prepareDataGantiPin();
+				dialog.dismiss();
+			}
+		});
+		RelativeLayout cancel = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.tombolcancelGantiPassword);
+		cancel.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				dialog.dismiss();
+			}
+		});
+		dialog.show();
+	}
+
+	private void prepareDataGantiPin() {
+		final Dialog dialog = new Dialog(this);
+		dialog.setContentView(gmedia.net.id.absenigmedia.R.layout.loading);
+		dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+		dialog.setCanceledOnTouchOutside(false);
+		dialog.show();
+		final JSONObject jBody = new JSONObject();
+		try {
+			jBody.put("pin", passLamaEditPin.getText().toString());
+			jBody.put("pin_baru", passBaruEditPin.getText().toString());
+			jBody.put("confirm_pin", rePassBaruEditPin.getText().toString());
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		ApiVolley request = new ApiVolley(MainActivity.this, jBody, "POST", URL.urlEditPIN, "", "", 0, new ApiVolley.VolleyCallback() {
+			@Override
+			public void onSuccess(String result) {
+				dialog.dismiss();
+				try {
+					JSONObject object = new JSONObject(result);
+					String pesan = object.getJSONObject("metadata").getString("message");
+					String status = object.getJSONObject("metadata").getString("status");
+					if (status.equals("1")) {
+//						session.createPIN(passLamaEditPin.getText().toString());
+						Toast.makeText(getApplicationContext(), pesan, Toast.LENGTH_LONG).show();
+					} else {
+						Toast.makeText(getApplicationContext(), pesan, Toast.LENGTH_LONG).show();
+					}
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
+			}
+
+			@Override
+			public void onError(String result) {
+				dialog.dismiss();
+				Toast.makeText(getApplicationContext(), "Terjadi Kesalahan", Toast.LENGTH_LONG).show();
+			}
+		});
+	}
+
+	private void preparePopupGantiPassword() {
+		final Dialog dialog = new Dialog(MainActivity.this);
+		dialog.setContentView(gmedia.net.id.absenigmedia.R.layout.popup_ganti_password);
+		dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+		final ImageView visiblePassLama = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.visiblePassLama);
+		final ImageView visiblePassBaru = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.visiblePassBaru);
+		final ImageView visibleRePassBaru = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.visibleRePassBaru);
+		passLama = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.passLama);
+		passBaru = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.passBaru);
+		rePassBaru = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.reTypePassBaru);
+		visiblePassLama.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (klikToVisiblePassLama) {
+					visiblePassLama.setImageDrawable(getResources().getDrawable(gmedia.net.id.absenigmedia.R.drawable.visible));
+					passLama.setInputType(InputType.TYPE_CLASS_TEXT);
+					klikToVisiblePassLama = false;
+				} else {
+					visiblePassLama.setImageDrawable(getResources().getDrawable(gmedia.net.id.absenigmedia.R.drawable.invisible));
+					passLama.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+					passLama.setTransformationMethod(PasswordTransformationMethod.getInstance());
+					klikToVisiblePassLama = true;
+				}
+			}
+		});
+		visiblePassBaru.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (klikToVisiblePassBaru) {
+					visiblePassBaru.setImageDrawable(getResources().getDrawable(gmedia.net.id.absenigmedia.R.drawable.visible));
+					passBaru.setInputType(InputType.TYPE_CLASS_TEXT);
+					klikToVisiblePassBaru = false;
+				} else {
+					visiblePassBaru.setImageDrawable(getResources().getDrawable(gmedia.net.id.absenigmedia.R.drawable.invisible));
+					passBaru.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+					passBaru.setTransformationMethod(PasswordTransformationMethod.getInstance());
+					klikToVisiblePassBaru = true;
+				}
+			}
+		});
+		visibleRePassBaru.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (klikToVisibleRePassBaru) {
+					visibleRePassBaru.setImageDrawable(getResources().getDrawable(gmedia.net.id.absenigmedia.R.drawable.visible));
+					rePassBaru.setInputType(InputType.TYPE_CLASS_TEXT);
+					klikToVisibleRePassBaru = false;
+				} else {
+					visibleRePassBaru.setImageDrawable(getResources().getDrawable(gmedia.net.id.absenigmedia.R.drawable.invisible));
+					rePassBaru.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+					rePassBaru.setTransformationMethod(PasswordTransformationMethod.getInstance());
+					klikToVisibleRePassBaru = true;
+				}
+			}
+		});
+		RelativeLayout OK = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.tombolOKgantiPassword);
+		OK.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+
+				// validasi
+				if (passLama.getText().toString().isEmpty()) {
+					passLama.setError("Password lama harap diisi");
+					passLama.requestFocus();
+					return;
+				} else {
+					passLama.setError(null);
+				}
+
+				if (passBaru.getText().toString().isEmpty()) {
+					passBaru.setError("Password baru harap diisi");
+					passBaru.requestFocus();
+					return;
+				} else {
+					passBaru.setError(null);
+				}
+
+				if (rePassBaru.getText().toString().isEmpty()) {
+					rePassBaru.setError("Password baru ulang harap diisi");
+					rePassBaru.requestFocus();
+					return;
+				} else {
+					rePassBaru.setError(null);
+				}
+				if (!rePassBaru.getText().toString().equals(passBaru.getText().toString())) {
+					rePassBaru.setError("Password ulang tidak sama");
+					rePassBaru.requestFocus();
+					return;
+				} else {
+					rePassBaru.setError(null);
+				}
+				prepareDataGantiPassword();
+				dialog.dismiss();
+			}
+		});
+		RelativeLayout cancel = dialog.findViewById(gmedia.net.id.absenigmedia.R.id.tombolcancelGantiPassword);
+		cancel.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				dialog.dismiss();
+			}
+		});
+		dialog.setCanceledOnTouchOutside(false);
+		dialog.show();
+                /*if (popup) {
+                    popupmenu.setVisibility(View.VISIBLE);
+                    popup = false;
+                } else {
+                    popupmenu.setVisibility(View.GONE);
+                    popup = true;
+                }*/
 	}
 
 	private void prepareDataGantiPassword() {
@@ -1020,7 +1209,7 @@ public class MainActivity extends RuntimePermissionsActivity
                     }).show();*/
 			manager.setWifiEnabled(true);
 			WifiInfo info = manager.getConnectionInfo();
-			File vidDir = new File(String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS)));
+//			File vidDir = new File(String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS)));
 		}
 	}
 }
